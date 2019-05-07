@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Bài 1</h1>
+    <p>Hiển thị chuỗi “The number is N”</p>
+    <input id="number1" type="number" placeholder="Nhập vào số cần hiển thị"/>
+    <button type="button" onclick="bai1();">Hiển thị từ 0 đến số vừa nhập</button><br>
+    <label id="result1"></label><br>
+
+    <h1>Bài 2</h1>
+    <p>Nhập vào một số bất kỳ lớn hơn 0. Tính tổng các phần tử từ 1 đến số vừa nhập vào.</p>
+    <input id="number2" type="number" placeholder="Nhập vào số lớn hơn 0"/>
+    <button type="button" onclick="bai2();">Tính tổng từ 1 đến số vừa nhập</button><br>
+    <label id="result2"></label>
+
+    <script>
+        function bai1() {                                                                                 // Khai báo hàm bai1.
+            let input1 = Math.round(document.getElementById("number1").value);                           // Gán giá trị nhập vào input1, làm tròn đến giá trị integer gần nhất.
+            let output1 = "";                                                                           // Khai báo biến output1.
+            if (input1 >= 0) {                                                                         // Kiểm tra giá trị của biến input1.
+                for (let i = 0; i <= input1; i++) {                                                   // Vòng lặp để hiển thị kết quả.
+                    output1 += "The number is " + i + "<br>";                                        // Gán giá trị cho biến output1.
+                }                                                                                   //
+                document.getElementById("result1").innerHTML = output1;                            // Hiển thị kết quả ra HTML.
+            }                                                                                     //
+            else {                                                                               //
+                document.getElementById("result1").innerHTML = "Vui lòng nhập vào số dương";    // Hiển thị ra HTML nếu input1 < 0.
+            }
+        }
+        
+        function bai2() {                                                                                 // Khai báo hàm bai2.
+            let input2 = Math.round(document.getElementById("number2").value);                           // Gán giá trị nhập vào input2, làm tròn đến giá trị integer gần nhất.
+            let output2 = 0;                                                                            // Khai báo biến output2.
+            if (input2 >= 0) {                                                                         // Kiểm tra giá trị của output2.
+                for (let i = 1; i <= input2; i+=1) {                                                  // Vòng lặp for tính giá trị đến số nhập vào.
+                    output2 = output2 +i;                                                            // Gán giá trị mới cho output2 sau khi thực hiện vòng lặp.
+                    document.getElementById("result2").innerHTML = "Result = " + output2;           // Hiển thị ra HTML kết quả.
+                }                                                                                  //
+            }                                                                                     //
+            else {                                                                               //
+                document.getElementById("result2").innerHTML = "Vui lòng nhập vào số dương";    // Hiển thị ra HTML nếu input2 < 0.
+            }
+        }
+    </script>
+</body>
+</html>
